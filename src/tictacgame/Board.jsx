@@ -34,7 +34,7 @@ import Square from "./Square";
             return;
         }
         const copystate = [...s]
-        copystate[index]=i ? "X": "0"
+        copystate[index]=i ? "X": "o"
         st(copystate);
         si(!i)
         
@@ -45,7 +45,7 @@ import Square from "./Square";
     };
      
     return(
-        <div className="board-container" style={{color:'deep'}}>
+        <div className="board-container" style={{color:'black'}}>
             {iswinner ? (<> Congratulations {iswinner} won the game{'  '}
             <button onClick={reset}>Play again</button>
           </>
@@ -54,7 +54,7 @@ import Square from "./Square";
             <>
             Game Tied
             
-            <button onClick={{reset}}>Play Again</button> 
+            <button onClick={reset}>Play Again</button> 
             </>
             ) : (
         <>
