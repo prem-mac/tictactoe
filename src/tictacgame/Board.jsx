@@ -27,6 +27,7 @@ import Square from "./Square";
 
     };
     const iswinner = chceckwinner();
+    const istie = !iswinner && s.every(item=>item !== null);
 
     const handleclick=(index)=>{
         if(s[index]!==null){
@@ -49,7 +50,13 @@ import Square from "./Square";
             <button onClick={reset}>Play again</button>
           </>
 
-            ):(
+            ) : istie ?(
+            <>
+            Game Tied
+            
+            <button onClick={{reset}}>Play Again</button> 
+            </>
+            ) : (
         <>
         <h2> player  {i ? "X": "0"}  please  move</h2>
             <div className="board-row">
